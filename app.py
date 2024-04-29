@@ -1,3 +1,4 @@
+#sudo setcap cap_net_raw+ep $(which python3.12)
 from flask import Flask, jsonify, render_template, request
 from pythonping import ping
 
