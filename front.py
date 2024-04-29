@@ -2,7 +2,7 @@
 from flask import Flask, jsonify, render_template, request
 from pythonping import ping
 
-app = Flask(__name__)
+front = Flask(__name__)
 
 
 def pinger(ip_address = '8.8.8.8'):
@@ -17,7 +17,7 @@ def pinger(ip_address = '8.8.8.8'):
   else:
       return 'failed'
 
-@app.route('/', methods=['GET','POST'])
+@front.route('/', methods=['GET','POST'])
 def index():
     if request.method == "POST":
         ip_address = request.form['ip_address']
@@ -28,4 +28,4 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    front.run(debug=True)
