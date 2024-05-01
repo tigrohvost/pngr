@@ -1,10 +1,13 @@
 #sudo setcap cap_net_raw+ep $(which python3.12)
 from flask import Flask, jsonify, render_template, request
-from pythonping import ping
+#from pythonping import ping
+import requests
+
+# https://stackoverflow.com/questions/71976607/how-to-run-two-flask-servers-on-different-ports-at-the-same-time-using-bash-scri
 
 front = Flask(__name__)
 
-
+""" 
 def pinger(ip_address = '8.8.8.8'):
   # The IP, Timeout Seconds
   result = ping(ip_address, count=1)
@@ -16,12 +19,24 @@ def pinger(ip_address = '8.8.8.8'):
       return res_str
   else:
       return 'failed'
+ """
+def caller(ip_address = '8.8.8.8'):
+    #import requests
+    url = 'http://127.0.0.1:5001/pinger'
+    #url = 'https://httpbin.org/post'
+    # POST/form data
+    payload = {
+        'address': ip_address,
+    }
+    r = requests.post(url, data=payload)
+    print(r.text)
+    return r.text
 
 @front.route('/', methods=['GET','POST'])
 def index():
     if request.method == "POST":
         ip_address = request.form['ip_address']
-        output = pinger(ip_address)
+        output = caller(ip_address)
         if ip_address:
             return jsonify({'output':output + 'ms'})
         return jsonify({'error' : 'Missing data!'})
