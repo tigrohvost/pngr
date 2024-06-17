@@ -1,5 +1,7 @@
 # curl -H "Content-Type: application/json" -X POST -d '{"address": "ya.ru"}' http://localhost:5000/pinger
 
+
+
 from flask import Flask, request, jsonify
 from pythonping import ping
 
@@ -28,4 +30,4 @@ def foo():
     return res
 
 if __name__ == '__main__':
-    back.run(debug=True, port = 5001)
+    back.run(host='0.0.0.0', debug=True, port = 5001)
