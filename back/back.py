@@ -1,7 +1,5 @@
 # curl -H "Content-Type: application/json" -X POST -d '{"address": "ya.ru"}' http://localhost:5000/pinger
 
-
-
 from flask import Flask, request, jsonify
 from pythonping import ping
 
