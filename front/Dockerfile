@@ -17,4 +17,5 @@ COPY . /app
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
-CMD ["front.py" ]
+#CMD ["front.py" ]
+CMD ["front.py", "--host=0.0.0.0", "--port=5000"]

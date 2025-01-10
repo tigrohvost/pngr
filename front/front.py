@@ -22,13 +22,13 @@ def pinger(ip_address = '8.8.8.8'):
  """
 def caller(ip_address = '8.8.8.8'):
     #import requests
-    url = 'http://127.0.0.1:5001/pinger'
+    url = 'http://back:5001/pinger'
     #url = 'https://httpbin.org/post'
     # POST/form data
     payload = {
         'address': ip_address,
     }
-    r = requests.post(url, data=payload)
+    r = requests.post(url, data=payload, headers = {"Content-Type": "application/json"}, timeout=1.0)
     print(r.text)
     return r.text
 
@@ -43,4 +43,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    front.run(debug=True)
+    #front.run(debug=True)
+    front.run(host='0.0.0.0')

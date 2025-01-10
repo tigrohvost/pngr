@@ -28,4 +28,4 @@ def foo():
     return res
 
 if __name__ == '__main__':
-    back.run(host='0.0.0.0', debug=True, port = 5001)
+    back.run(host='0.0.0.0', port = 5001)
