@@ -30,6 +30,7 @@ jobs:
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
+        working-directory: pngr/back/
         with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
