@@ -44,4 +44,4 @@ context: ./back и сборка работает ^_^ Правда, в докер
 
 Github actions будет ходить в наш кластер с помощью https://github.com/tale/kubectl-action. Для этого нужно взять из кластера kubeconfig: берем с мастерноды /etc/kubernetes/admin.conf.
 
-
+Создаем новый секрет в /settings/secrets/actions/new с именем KUBE_CONFIG
