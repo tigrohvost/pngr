@@ -9,5 +9,8 @@ jobs:
     steps:
     - uses: tale/kubectl-action@v1
       with:
+        context: ./back
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
-    - run: kubectl get pods
+    - run: |
+          kubectl apply -f back-deployment.yaml
+          kubectl apply -f back-service.yaml
