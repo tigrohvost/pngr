@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: back
-        image: localhost:32000/back:registry
+        image: tigrohvost/back
         ports:
         - containerPort: 5001
