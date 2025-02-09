@@ -7,6 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          ./back/back-deployment.yaml
+          ./back/back-service.yaml
+        sparse-checkout-cone-mode: false
     - uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
