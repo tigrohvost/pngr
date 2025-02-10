@@ -17,5 +17,5 @@ jobs:
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
     - run: |
-          kubectl apply -f back-deployment.yaml
-          kubectl apply -f back-service.yaml
+          kubectl apply -f ./back/back-deployment.yaml
+          kubectl apply -f ./back/back-service.yaml
