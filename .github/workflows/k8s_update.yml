@@ -10,15 +10,10 @@ jobs:
     - uses: actions/checkout@v4
       with:
         repository: tigrohvost/pngr
-        sparse-checkout: |
-          ./back/back-deployment.yaml
-          ./back/back-service.yaml
-        sparse-checkout-cone-mode: false
     - uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
     - run: |
-
           echo 'workdir:'
           pwd
           echo 'var:'
