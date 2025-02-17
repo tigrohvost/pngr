@@ -20,5 +20,5 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo 'file list:'
           ls -ail
-          #kubectl apply -f ./back/back-deployment.yaml
-          #kubectl apply -f ./back/back-service.yaml
+          kubectl apply -f ./back/back-deployment.yaml
+          kubectl apply -f ./back/back-service.yaml
