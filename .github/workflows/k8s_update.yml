@@ -17,8 +17,12 @@ jobs:
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
     - run: |
+
+          echo 'workdir:'
           pwd
+          echo 'var:'
           echo $GITHUB_WORKSPACE
+          echo 'file list:'
           ls -ail
           #kubectl apply -f ./back/back-deployment.yaml
           #kubectl apply -f ./back/back-service.yaml
