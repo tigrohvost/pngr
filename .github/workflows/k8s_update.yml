@@ -16,5 +16,5 @@ jobs:
         kubectl-version: v1.29.0
     - run: |
           kubectl version
-          #kubectl apply -f ./back/back-deployment.yaml
-          #kubectl apply -f ./back/back-service.yaml
+          kubectl apply -f ./back/back-deployment.yaml
+          kubectl apply -f ./back/back-service.yaml
