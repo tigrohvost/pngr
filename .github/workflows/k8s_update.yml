@@ -15,6 +15,6 @@ jobs:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
         kubectl-version: v1.29.0
     - run: |
-          kubectl version
+          #kubectl version
           kubectl apply -f ./back/back-deployment.yaml
           kubectl apply -f ./back/back-service.yaml
