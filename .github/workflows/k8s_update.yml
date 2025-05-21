@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: tigrohvost/pngr
+        repository: tigrohvost/back
     - uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
