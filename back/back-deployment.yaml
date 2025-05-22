@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: back
-        image: tigrohvost/back:main
+        image: docker.io/tigrohvost/back:main
         ports:
         - containerPort: 5001
       #imagePullSecrets:
