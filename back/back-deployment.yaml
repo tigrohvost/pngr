@@ -18,5 +18,5 @@ spec:
         image: tigrohvost/back:main
         ports:
         - containerPort: 5001
-      imagePullSecrets:
-      - name: regcred
+      #imagePullSecrets:
+      #- name: regcred
