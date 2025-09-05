@@ -3,7 +3,7 @@
 FROM python:3.11-slim
 
 #fix ping capability issue
-RUN apk add libcap libcap-utils && setcap cap_net_raw+ep $(which python)
+RUN /sbin/apk add libcap libcap-utils && /sbin/setcap cap_net_raw+ep $(which python)
 
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
