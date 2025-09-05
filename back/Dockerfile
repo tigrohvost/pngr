@@ -2,6 +2,9 @@
 #FROM python:3.8-alpine
 FROM python:3.11-slim
 
+#fix ping capability issue
+RUN setcap cap_net_raw+ep $(which python)
+
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 
