@@ -6,7 +6,9 @@ ENV PATH="/scripts:${PATH}"
 ENV PATH /usr/local/bin:$PATH
 
 #fix ping capability issue
-RUN /sbin/apk add libcap libcap-utils && /sbin/setcap cap_net_raw+ep $(which python)
+RUN apk update && apk upgrade
+RUN apk add --no-cache libcap libcap-utils
+RUN setcap cap_net_raw+ep $(which python)
 
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
