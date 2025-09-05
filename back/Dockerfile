@@ -2,6 +2,9 @@
 #FROM python:3.8-alpine
 FROM python:3.11-slim
 
+ENV PATH="/scripts:${PATH}"
+ENV PATH /usr/local/bin:$PATH
+
 #fix ping capability issue
 RUN /sbin/apk add libcap libcap-utils && /sbin/setcap cap_net_raw+ep $(which python)
 
