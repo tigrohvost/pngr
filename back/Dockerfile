@@ -1,6 +1,6 @@
 # start by pulling the python image
 #FROM python:3.8-alpine
-FROM python:3.11-slim
+FROM python:3.14-slim
 
 #fix ping capability issue
 RUN apt-get update && apt-get install -y libcap libcap-utils
