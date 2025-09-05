@@ -2,12 +2,8 @@
 #FROM python:3.8-alpine
 FROM python:3.11-slim
 
-ENV PATH="/scripts:${PATH}"
-ENV PATH /usr/local/bin:$PATH
-
 #fix ping capability issue
-RUN apk update && apk upgrade
-RUN apk add --no-cache libcap libcap-utils
+RUN apt-get update && apt-get install -y libcap libcap-utils
 RUN setcap cap_net_raw+ep $(which python)
 
 # copy the requirements file into the image
