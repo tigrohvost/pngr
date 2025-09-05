@@ -1,9 +1,10 @@
 # start by pulling the python image
-#FROM python:3.8-alpine
-FROM python:3.13-slim
+FROM python:3.8-alpine
+#FROM python:3.13-slim
 
 #fix ping capability issue
-RUN apt-get update && apt-get install -y libcap libcap-utils
+#RUN apt-get update && apt-get install -y libcap libcap-utils
+RUN apk update && apk add libcap libcap-utils
 RUN setcap cap_net_raw+ep $(which python)
 
 # copy the requirements file into the image
