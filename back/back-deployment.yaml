@@ -16,6 +16,9 @@ spec:
       containers:
       - name: back
         image: docker.io/tigrohvost/back:main
+        securityContext:
+          capabilities:
+            add: ["NET_ADMIN"]
         ports:
         - containerPort: 5001
       imagePullSecrets:
