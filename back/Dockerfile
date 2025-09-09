@@ -4,7 +4,7 @@ FROM python:3.8-alpine
 
 #fix ping capability issue
 #RUN apt-get update && apt-get install -y libcap libcap-utils
-RUN apk update && apk add libcap libcap-utils
+RUN apk update && apk add libcap libcap-utils && apk add python3
 RUN /usr/sbin/setcap cap_net_raw+ep /usr/bin/python3
 
 # copy the requirements file into the image
