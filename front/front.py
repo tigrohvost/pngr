@@ -28,7 +28,8 @@ def caller(ip_address = '8.8.8.8'):
     payload = {
         'address': ip_address,
     }
-    r = requests.post(url, data=payload, headers = {"Content-Type": "application/json"}, timeout=1.0)
+    #r = requests.post(url, data=payload, headers = {"Content-Type": "application/json"}, timeout=1.0)
+    r = requests.post(url, json=payload)
     print(r.text)
     return r.text
 
